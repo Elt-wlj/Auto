@@ -25,9 +25,14 @@ from appium.webdriver import Remote
 # activity: app当中的那个页面
 caps = {
     'platformName': 'Android',
+    # 校验系统的版本
+    # 'platformVersion': '8.0',
+    'automationName': 'Uiautomator2',
     'deviceName': 'emulator-5554',
     'appPackage': 'com.ibox.calculators',
-    'appActivity': 'com.ibox.calculators.CalculatorActivity'
+    'appActivity': 'com.ibox.calculators.CalculatorActivity',
+    # 会使用缓存数据
+    'noReset': 'True'
 }
 driver = Remote(command_executor='http://127.0.0.1:4723/wd/hub',
                 desired_capabilities=caps)

@@ -25,9 +25,26 @@ from appium.webdriver import Remote
 # activity: app当中的那个页面
 caps = {
     'platformName': 'Android',
+    # 校验系统的版本
+    # 'platformVersion': '8.0',
+    # 'automationName': 'Uiautomator2',
     'deviceName': 'emulator-5554',
-    'appPackage': 'com.ibox.calculators',
-    'appActivity': 'com.ibox.calculators.CalculatorActivity'
+    # 'appPackage': 'com.ibox.calculators',
+    # 'appActivity': 'com.ibox.calculators.CalculatorActivity',
+    'app': r'E:\apk\Future-release-2018.apk',
+    # 会使用缓存数据
+    'noReset': 'True',
+    # 'chromedriverExecutable':r'手机的浏览器驱动',
+    # 'unicodeKeyboard': True,
+    # 'resetKeyboard': True
+    # 'autoGrantPermissions': True
+
+
 }
 driver = Remote(command_executor='http://127.0.0.1:4723/wd/hub',
                 desired_capabilities=caps)
+
+# 等待
+driver.implicitly_wait(10)
+driver.find_element(By.ID,'').click()
+driver.quit()
