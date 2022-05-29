@@ -41,8 +41,14 @@ driver.find_element('id',)
 driver.find_element('xpath',)
 # 这是通过安卓原生的定位方式，我们需要写java语言，没有提示。
 # UiSelector()元素定位器
-locator = 'new UiSelector().'
+# 坑: java语言中的字符串是使用的双引号，不能使用单引号。
+# 优势: 原生的查询速度更快
+locator = 'new UiSelector().resourceId("com.lemon.lemonban:id/icon").checkable(false)'
 driver.find_element_by_android_uiautomator(locator)
+
+# 通过描述desc 去获取元素，因为极有可能没有
+driver.find_element_by_accessibility_id()
 # tagname 不能用
 # class_name ,可以，但是相当于原来的tag_name,不能精确定位
+
 driver.quit()
