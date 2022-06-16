@@ -31,7 +31,7 @@ caps = {
     'deviceName': 'emulator-5554',
     # 'appPackage': 'com.ibox.calculators',
     # 'appActivity': 'com.ibox.calculators.CalculatorActivity',
-    'app': r'E:\apk\Future-release-2018.apk',
+    'app': r'E:\apk\qcd-Future-release-2018.apk',
     # 会使用缓存数据
     'noReset': 'True',
     # 'chromedriverExecutable':r'手机的浏览器驱动',
@@ -46,5 +46,5 @@ driver = Remote(command_executor='http://127.0.0.1:4723/wd/hub',
 
 # 等待
 driver.implicitly_wait(10)
-driver.find_element(By.ID,'').click()
+# driver.find_element(By.ID,'').click()
 driver.quit()

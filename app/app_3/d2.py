@@ -21,7 +21,7 @@ caps = {
     'deviceName': 'emulator-5554',
     # 'appPackage': 'com.ibox.calculators',
     # 'appActivity': 'com.ibox.calculators.CalculatorActivity',
-    'app': r'E:\apk\Future-release-2018.apk',
+    'app': r'E:\apk\nmb-lemon_app_webview_debug.apk',
     # 会使用缓存数据
     'noReset': 'True',
     # 'chromedriverExecutable':r'手机的浏览器驱动',
@@ -37,18 +37,18 @@ driver = Remote(command_executor='http://127.0.0.1:4723/wd/hub',
 driver.implicitly_wait(10)
 # driver.find_element(By.ID, '').click()
 # 查找元素
-driver.find_element('id',)
-driver.find_element('xpath',)
+# driver.find_element('id',)
+# driver.find_element('xpath',)
 # 这是通过安卓原生的定位方式，我们需要写java语言，没有提示。
 # UiSelector()元素定位器
 # 坑: java语言中的字符串是使用的双引号，不能使用单引号。
 # 优势: 原生的查询速度更快
-locator = 'new UiSelector().resourceId("com.lemon.lemonban:id/icon").checkable(false)'
-driver.find_element_by_android_uiautomator(locator)
+# locator = 'new UiSelector().resourceId("com.lemon.lemonban:id/icon").checkable(false)'
+# driver.find_element_by_android_uiautomator(locator)
 
 # 通过描述desc 去获取元素，因为极有可能没有
-driver.find_element_by_accessibility_id()
+# driver.find_element_by_accessibility_id()
 # tagname 不能用
 # class_name ,可以，但是相当于原来的tag_name,不能精确定位
 
-driver.quit()
+# driver.quit()
